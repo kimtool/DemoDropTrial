@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import moment from 'moment'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
-import TodoDataService from '../api/DemoDataService.js'
+import DemoDataService from '../api/DemoDataService.js'
 import AuthenticationService from './AuthenticationService.js'
 import '../../App.css'
 
@@ -21,7 +21,7 @@ class AddDemoComponent extends Component {
     }
 
         let username = AuthenticationService.getLoggedInUsername()
-        TodoDataService.retrieveTodo(username, this.state.id)
+        DemoDataService.retrieveDemo(username, this.state.id)
         .then(response => this.setState({
             description: response.data.description,
             targetDate : moment(response.data.targetDate).format("YYYY-MM-DD")
@@ -42,22 +42,22 @@ class AddDemoComponent extends Component {
     onSubmit = (values) =>{
         //console.log(values);
         let username = AuthenticationService.getLoggedInUsername()
-        let todo = {username: AuthenticationService.getLoggedInUsername(),
+        let demo = {username: AuthenticationService.getLoggedInUsername(),
                     id: this.state.id,
                     description: values.description, 
                     targetDate: values.targetDate}
 
         if(this.state.id===-1){
-            TodoDataService.createTodo(username, todo
+            DemoDataService.createDemo(username, demo
             // {username: AuthenticationService.getLoggedInUsername(),
             // id: this.state.id,
             // description: values.description, 
             // targetDate: values.targetDate}
             )
-                .then(() => this.props.history.push("/todos"))
+                .then(() => this.props.history.push("/demos"))
         }else{
-            TodoDataService.updateTodo(username, this.state.id, todo)
-                .then(() => this.props.history.push("/todos"))
+            DemoDataService.updateDemo(username, this.state.id, demo)
+                .then(() => this.props.history.push("/demos"))
         }
     }
 

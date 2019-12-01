@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.in28minutes.rest.webservices.WebServices.todo;
+package com.in28minutes.rest.webservices.WebServices.demo;
 
+import com.in28minutes.rest.webservices.WebServices.demo.Demo;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface TodoJpaRespository extends JpaRepository<Todo, Long>{
-    List<Todo> findByUsername(String username);
+public interface DemoJpaRespository extends JpaRepository<Demo, Long>{
+    List<Demo> findByUsername(String username);
 }

@@ -1,26 +1,26 @@
 import axios from 'axios'
 import {JPA_API_URL} from "../../Constants"
 
-class TodoDataService {
-    retrieveAllTodos(name){
-        return axios.get(`${JPA_API_URL}/users/${name}/todos`)
+class DemoDataService {
+    retrieveAllDemos(name){
+        return axios.get(`${JPA_API_URL}/users/${name}/demos`)
     }
 
-    retrieveTodo(name, id){
-        return axios.get(`${JPA_API_URL}/users/${name}/todos/${id}`)
+    retrieveDemo(name, id){
+        return axios.get(`${JPA_API_URL}/users/${name}/demos/${id}`)
     }
 
-    deleteTodo(name, id){
-        return axios.delete(`${JPA_API_URL}/users/${name}/todos/${id}`)
+    deleteDemo(name, id){
+        return axios.delete(`${JPA_API_URL}/users/${name}/demos/${id}`)
     }
 
-    updateTodo(name, id, todo){
-        return axios.put(`${JPA_API_URL}/users/${name}/todos/${id}`, todo)
+    updateDemo(name, id, demo){
+        return axios.put(`${JPA_API_URL}/users/${name}/demos/${id}`, demo)
     }
 
-    createTodo(name, todo){
-        return axios.post(`${JPA_API_URL}/users/${name}/todos/`, todo)
+    createDemo(name, demo){
+        return axios.post(`${JPA_API_URL}/users/${name}/demos/`, demo)
     }
 }
 
-export default new TodoDataService()
+export default new DemoDataService()

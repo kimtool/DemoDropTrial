@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.in28minutes.rest.webservices.WebServices.todo;
+package com.in28minutes.rest.webservices.WebServices.demo;
 
 import java.util.Date;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Todo {
+public class Demo {
     
     @Id         //any entity needs primary key
     @GeneratedValue     //auto generated
@@ -27,11 +27,11 @@ public class Todo {
     private Date targetDate;
     private boolean isDone;
     
-    protected Todo(){
+    protected Demo(){
         
     }
 
-    public Todo(Long id, String username, String description, Date targetDate, boolean isDone) {
+    public Demo(Long id, String username, String description, Date targetDate, boolean isDone) {
         super();
         this.id = id;
         this.username = username;
@@ -97,7 +97,7 @@ public class Todo {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Todo other = (Todo) obj;
+        final Demo other = (Demo) obj;
         if (this.id != other.id) {
             return false;
         }

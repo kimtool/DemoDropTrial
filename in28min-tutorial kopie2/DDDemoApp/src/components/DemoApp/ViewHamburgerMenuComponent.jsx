@@ -10,8 +10,8 @@ class ViewHamburgerMenu extends Component{
             <nav className="m-menu-bar">                    
                 <ul className="m-navigation">
                     {isUserLoggedIn && <li><Link className="m-menu-icon" to="/welcome/name">HOME</Link></li>}
-                    {isUserLoggedIn && <li><Link className="m-menu-icon" to="/todos">MY PROFILE</Link></li>}
-                    {isUserLoggedIn && <li><Link className="m-menu-icon"  to="/todos">DEMO'S</Link></li>}
+                    {isUserLoggedIn && <li><Link className="m-menu-icon" to="/demos">MY PROFILE</Link></li>}
+                    {isUserLoggedIn && <li><Link className="m-menu-icon"  to="/demos">DEMO'S</Link></li>}
                     {isUserLoggedIn && <li><Link className="m-menu-icon" to="/logout" onClick={AuthenticationService.logout}>LOG OUT</Link></li>}
                 </ul>
             </nav>        

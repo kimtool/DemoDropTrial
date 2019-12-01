@@ -12,13 +12,13 @@ class HeaderComponent extends Component{
                 <nav className="menu-bar">                    
                     <ul className="navigation left">
 {/* links are only shown when isUserLoggedIn is true */}
-                        {isUserLoggedIn && <li><Link className="menu-icon" to="/welcome/name">HOME</Link></li>}
-                        {isUserLoggedIn && <li><Link className="menu-icon" to="/todos">MY PROFILE</Link></li>}
+                        {isUserLoggedIn && <li><Link className="menu-icon" to="/welcome/Hexagonian">HOME</Link></li>}
+                        {isUserLoggedIn && <li><Link className="menu-icon" to="/demos">MY PROFILE</Link></li>}
                     </ul>    
-                        <Link to="/welcome/name"><img className="hexagonlogo" alt="" src={hexagonlogo}/></Link>
+                        <Link to="/welcome/Hexagonian"><img className="hexagonlogo" alt="" src={hexagonlogo}/></Link>
                     <ul className="navigation right">
                         {/* {!isUserLoggedIn && <li><Link className="nav-link menu-icon" to="/login">LOGIN</Link></li>} */}
-                        {isUserLoggedIn && <li><Link className="menu-icon"  to="/todos">DEMO'S</Link></li>}
+                        {isUserLoggedIn && <li><Link className="menu-icon"  to="/demos">DEMO'S</Link></li>}
                         {isUserLoggedIn && <li><Link className="menu-icon" to="/logout" onClick={AuthenticationService.logout}>LOG OUT</Link></li>}
                     </ul>
                 </nav>

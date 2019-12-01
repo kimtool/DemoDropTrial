@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
-import TodoDataService from '../api/DemoDataService.js'
+import DemoDataService from '../api/DemoDataService.js'
 import AuthenticationService from './AuthenticationService.js'
 import moment from 'moment'
 
-class ListTodosComponent extends Component {
+class ListDemosComponent extends Component {
     constructor(props){             //gets called when component is being initialized
         super(props)
         this.state = {
-            todos: 
+            demos: 
             [               //better not to do initial API call directly in the constructor, otherwise state will not be initialized until API call is completed
             //{id:1, description:"Learn React", done:false, targetDate:new Date()}, 
             ], 
@@ -16,35 +16,35 @@ class ListTodosComponent extends Component {
     }
 
     componentDidMount() { 
-        this.refreshTodos();
+        this.refreshDemos();
     }    
 
-    refreshTodos = () => {
+    refreshDemos = () => {
         let username = AuthenticationService.getLoggedInUsername()
-        TodoDataService.retrieveAllTodos(username)
+        DemoDataService.retrieveAllDemos(username)
         .then(
             response => {
-            this.setState({todos : response.data})
+            this.setState({demos : response.data})
         })
     }
 
-    deleteTodoClicked = (id) => {
+    deleteDemoClicked = (id) => {
         let username = AuthenticationService.getLoggedInUsername()
-        TodoDataService.deleteTodo(username, id)
+        DemoDataService.deletDemo(username, id)
         .then (
             response =>{
-                this.setState({message:`Delete of todo ${id} Succesful`});
-                this.refreshTodos();
+                this.setState({message:`Delete of demo ${id} Succesful`});
+                this.refreshDemos();
             }
         )
     }
 
-    updateTodoClicked = (id) => {
-        this.props.history.push(`/todos/${id}`)
+    updateDemoClicked = (id) => {
+        this.props.history.push(`/demos/${id}`)
     }
 
-    addTodoClicked = () => {
-        this.props.history.push(`/todos/-1`)
+    addDemoClicked = () => {
+        this.props.history.push(`/demos/-1`)
     }
 
     render(){
@@ -69,23 +69,23 @@ class ListTodosComponent extends Component {
                 <tbody>
                     {
 //map() method is used to iterate over an array and calling function on every element of array.
-                        this.state.todos.map (
-                            todo =>                        
-                            <tr key={todo.id}>
-                                <td>{todo.id}</td>
-                                <td>{todo.username}</td>
-                                <td>{todo.description}</td>
-                                <td>{moment(todo.targetDate).format("YYYY-MM-DD")}</td>
-                                <td>{todo.isDone.toString()}</td>                                
-                                <td><button className="button_small" onClick={() => this.updateTodoClicked(todo.id)}>Update</button></td>
-                                <td><button className="button_small" onClick={() => this.deleteTodoClicked(todo.id)}>Delete</button></td>
+                        this.state.demos.map (
+                            demo =>                        
+                            <tr key={demo.id}>
+                                <td>{demo.id}</td>
+                                <td>{demo.username}</td>
+                                <td>{demo.description}</td>
+                                <td>{moment(demo.targetDate).format("YYYY-MM-DD")}</td>
+                                <td>{demo.isDone.toString()}</td>                                
+                                <td><button className="button_small" onClick={() => this.updateDemoClicked(demo.id)}>Update</button></td>
+                                <td><button className="button_small" onClick={() => this.deleteDemoClicked(demo.id)}>Delete</button></td>
                             </tr>
                         )
                     }
                 </tbody>
             </table>
             <div className="row">
-                <button className="button" onClick={this.addTodoClicked}>Add</button>
+                <button className="button" onClick={this.addDemoClicked}>Add</button>
             </div>
             </div>
         </div>
@@ -93,4 +93,4 @@ class ListTodosComponent extends Component {
     }
 }
 
-export default ListTodosComponent
+export default ListDemosComponent
