@@ -9,7 +9,7 @@ class LoginComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
-            username: "in28min",
+            username: "",
             password: "",
             wasLoginSuccesful: false,
             showErrorMessage: false
@@ -47,7 +47,7 @@ class LoginComponent extends Component {
                 <div id="register_block">
                     <div id="fields">
                         <div id="login_padding">
-                            <input type="text" className="field" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Username" required/><br/>
+                            <input type="text" className="field" name="username" autocomplete="off" value={this.state.username} onChange={this.handleChange} placeholder="Username" required/><br/>
                             <input type="password" className="field" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" required/>      
                         </div>
                     </div>

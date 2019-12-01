@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.in28minutes.rest.webservices.WebServices.todo;
 
 import java.net.URI;
@@ -19,10 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  */
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
-public class TodoJpaResource {
-    
-    @Autowired
-    private TodoHardcodedService todoService;
+public class TodoJpaResource {    
     
     @Autowired
     private TodoJpaRespository TodoJpaRespository;
