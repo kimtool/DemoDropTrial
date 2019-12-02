@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import '../../App.css'
 import AuthenticatedRoute from './AuthenticatedRoute.jsx'
 import LoginComponent from './LoginComponent.jsx'
+import RegisterComponent from './RegisterComponent.jsx'
 import DemoListComponent from './DemoListComponent.jsx'
 import HeaderComponent from './HeaderComponent.jsx'
 import FooterComponent from './FooterComponent.jsx'
@@ -27,6 +28,7 @@ class DemoApp extends Component {
 {/* Route defines wich page has wich url, AuthenticatedRoute can only be taken by authenticated users */}                                  
                             <Route path="/" exact component={LoginComponent}/>
                             <Route path="/login" component={LoginComponent}/>
+                            <Route path="/register" component={RegisterComponent}/>
                             <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
                             <AuthenticatedRoute path="/demos/:id" component={AddDemoComponent}/>
                             <AuthenticatedRoute path="/demos" component={DemoListComponent}/>

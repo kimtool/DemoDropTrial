@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.in28minutes.rest.webservices.WebServices.jwt.resource;
 
 import java.io.Serializable;
@@ -13,7 +9,6 @@ import java.io.Serializable;
  */
 
 //contains username/password
-
 public class  JwtTokenRequest implements Serializable {
   
   private static final long serialVersionUID = -5616176897013108345L;
