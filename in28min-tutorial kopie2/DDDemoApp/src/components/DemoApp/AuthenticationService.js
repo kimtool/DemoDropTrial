@@ -3,7 +3,6 @@
 //Promise based HTTP client for the browser and node.js
 import axios from "axios"
 import {API_URL} from "../../Constants"
-
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = "authenticatedUser"
 
 //When user is succesfully logged in, we create a key to save in session storage

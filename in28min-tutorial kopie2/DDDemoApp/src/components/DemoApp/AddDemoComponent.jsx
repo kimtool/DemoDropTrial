@@ -84,11 +84,11 @@ class AddDemoComponent extends Component {
                             <div className="container">
                             <fieldset className="form-group">
                                 <label>Description</label>
-                                <Field autocomplete="off" className="form-control" type="text" name="description"/>
+                                <Field autoComplete="off" className="form-control" type="text" name="description"/>
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Target Date</label>
-                                <Field autocomplete="off" className="form-control" type="date" name="targetDate"/>
+                                <Field autoComplete="off" className="form-control" type="date" name="targetDate"/>
                             </fieldset>
                             <button className="button" type="submit">Save</button>
                             </div>

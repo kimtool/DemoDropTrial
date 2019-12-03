@@ -22,8 +22,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Gebruiker
  */
 
-//contains methods to handle resources
-
+//contains the important methods to be able to handle the resources
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
 public class JwtAuthenticationRestController {

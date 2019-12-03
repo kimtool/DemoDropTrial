@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.in28minutes.rest.webservices.WebServices.jwt;
 
 import org.springframework.beans.factory.annotation.*;
@@ -62,7 +57,8 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-//Send error respond when user is unauthorized
+//this is authorization entry point.   
+//When user is unauthorized send error respond
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
@@ -96,6 +92,12 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers(
                 HttpMethod.GET,
                 "/" //Other Stuff You want to Ignore
+            )
+            .and()
+            .ignoring()
+            .antMatchers(
+                HttpMethod.POST,
+                "/members" //Other Stuff You want to Ignore
             )
             .and()
             .ignoring()

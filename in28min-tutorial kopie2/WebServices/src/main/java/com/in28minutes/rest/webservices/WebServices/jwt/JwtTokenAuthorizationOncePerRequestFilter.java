@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.in28minutes.rest.webservices.WebServices.jwt;
 
 import io.jsonwebtoken.ExpiredJwtException;
@@ -28,6 +23,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
  * @author Gebruiker
  */
 @Component
+//authorizes all requests 
 public class JwtTokenAuthorizationOncePerRequestFilter extends OncePerRequestFilter {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

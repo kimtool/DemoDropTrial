@@ -12,8 +12,7 @@ import java.io.Serializable;
  * @author Gebruiker
  */
 
-//contains token
-
+//response contains token
 public class JwtTokenResponse implements Serializable {
 
   private static final long serialVersionUID = 8317676219297719109L;
